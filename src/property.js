@@ -50,7 +50,7 @@ var property = (function(){
 			if(_setPrivate)
 				throw "Attempt to Publicly set Private property";
 
-			setCaller(value);
+			return setCaller(value);
 		}
 
 		var getCaller = function()

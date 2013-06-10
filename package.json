@@ -1,12 +1,20 @@
 {
   "name": "property.js",
-  "version": "0.0.0",
-  "description": "ERROR: No README.md file found!",
-  "main": "observableArray.js",
+  "version": "0.0.2",
+  "description": "A library for simply working with JavaScript Properties, including observability and privacy",
+  "main": "src/property.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node ./Test/testSpec.js"
   },
-  "repository": "",
-  "author": "",
-  "license": "BSD"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herber88/property.js"
+  },
+  "author": "Robert Herber",
+  "license": "BSD",
+  "keywords": [
+    "property",
+    "observable",
+    "privacy"
+  ]
 }

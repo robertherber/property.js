@@ -1,5 +1,5 @@
 if(typeof module !== "undefined"){
-	property = require('./property.js');
+	property = require('../src/property.js');
 }
 
 describe('Property', function(){
