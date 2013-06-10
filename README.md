@@ -47,3 +47,13 @@ property.js is a JavaScript Library that Provides Simpler Usage of the Native Pr
 
 		console.log(obj.greeting); //Undefined because property is fully private (ie. property isn't present)
 		obj.name = "Alejandro"; //error: Attempt to change private setter publicly
+
+## Alternate creation (without mixin)
+		var obj = {};
+		property(obj, "phrase", "hello world");
+		console.log(obj.phrase);
+
+## Getters and setters
+		The Getters and Setters are powerful, and allows you to use the properties in a flexible manner: 
+		- The First Argument Allows you to Specify a custom Getter/Setter Method, or alternatively a truthy value to use the default Method (basically just getting and setting the internal value of the property), or a falsy value to remove the Getter/Setter completely.
+		- The Second Argument specifies whether the Property is private or not (if it should be public you can leave it out). A private Setter/Getter is only accessable from the Private Scope handle (ie. the variable returned from addProperty, with the familiar JQuery Property Syntax), whereas a public Setter/Getter will be available for use as a property on the object.
