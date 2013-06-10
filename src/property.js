@@ -16,16 +16,6 @@ var property = (function(){
 	    }
 	};
 
-	/*var property = function(context, name, value, get, set, getPrivate, setPrivate)
-	{
-		var _get = (get === undefined) ? true : get,
-			_set = (set === undefined) ? true : set,
-			_getPrivate = !!getPrivate && name,
-			_setPrivate = !!setPrivate && name,
-			_setterSet = (get !== undefined),
-			_getterSet = (set !== undefined),
-			_value = value,
-			_observers = [];*/
 	var property = function(context, name, value)
 	{
 		var _get = true,
@@ -156,77 +146,11 @@ var property = (function(){
 			return property(context, name, value, getter, setter, getPrivate, setPrivate);
 		};
 
-		/*context.addPropertyPrivate = function(value, getter, setter){
-			return property.createPrivate(context, value, getter, setter);
-		};
-
-		context.addPropertyPublic = function(name, value, getter, setter){
-			return property.createPublic(context, name, value, getter, setter);
-		};
-
-		context.addPropertyProtected = function(name, value, getter, setter){
-			return property.createPublic(context, name, value, getter, setter);
-		};
-
-		context.addPropertyReadOnly = function(name, getter){
-			return property.createPublic(context, name, getter);
-		};*/
-
 		return context;
 	}
-/*
-	property.createPrivate = function(context, value, getter, setter)
-	{
-		getter = (getter !== undefined && typeof(getter) === "function") ? getter : true;
-		setter = (setter !== undefined && typeof(setter) === "function") ? setter : true;
-
-		return property(context, null, value, getter, setter, true, true);
-	}
-
-	property.createPublic = function(context, name, value, getter, setter)
-	{
-		getter = (getter !== undefined && typeof(getter) === "function") ? getter : true;
-		setter = (setter !== undefined && typeof(setter) === "function") ? setter : true;
-
-		if(!name)
-			throw "Name must be specified for public properties";
-
-		return property(context, name, value, getter, setter);
-	}
-
-	property.createProtected = function(context, name, value, getter, setter)
-	{
-		getter = (getter !== undefined && typeof(getter) === "function") ? getter : true;
-		setter = (setter !== undefined && typeof(setter) === "function") ? setter : true;
-
-		if(!name)
-			throw "Name must be specified for public properties";
-
-		return property(context, name, value, getter, setter, false, true);
-	}
-
-	property.createReadOnly = function(context, name, getter)
-	{
-		getter = (getter !== undefined && typeof(getter) === "function") ? getter : true;
-
-		if(!name)
-			throw "Name must be specified for public properties";
-
-		return property(context, name, null, getter, false);
-	}
-*/
 	return property;
 })();
 
 if(typeof module !== 'undefined'){
 	module.exports = property;
 }
-
-/*
-function myClass(){
-	
-}
-var myInstance = new myClass();
-
-property.mixin(myInstance);
-myInstance.addProperty("test", 5);*/
